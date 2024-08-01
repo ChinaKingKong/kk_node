@@ -198,6 +198,12 @@ function resetProfile() {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .el-button {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+  }
 }
 
 .el-form-item {
@@ -206,12 +212,6 @@ function resetProfile() {
 
 .el-input {
   width: 100%;
-}
-
-.el-button {
-  width: 100%;
-  max-width: 200px;
-  margin-top: 20px;
 }
 
 .btns-view {
