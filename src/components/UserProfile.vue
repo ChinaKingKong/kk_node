@@ -51,6 +51,11 @@ onMounted(async () => {
   await fetchProfile();
 });
 
+/**
+ * 异步获取用户信息
+ *
+ * @returns 无返回值，将获取到的用户信息赋值给全局变量profile
+ */
 async function fetchProfile() {
   try {
     const { data } = await api.get('/api/profile');
@@ -62,6 +67,11 @@ async function fetchProfile() {
   }
 }
 
+/**
+ * 保存用户信息
+ *
+ * @returns 异步函数，无返回值
+ */
 async function saveProfile() {
   formRef.value.validate(async (valid) => {
     if (valid) {
@@ -82,6 +92,11 @@ async function saveProfile() {
   });
 }
 
+/**
+ * 删除用户
+ *
+ * @returns 无返回值，异步操作
+ */
 async function deleteUser() {
   ElMessageBox.confirm('确定删除用户吗？', '提示', {
     confirmButtonText: '确定',
@@ -106,6 +121,11 @@ async function deleteUser() {
   });
 }
 
+/**
+ * 重置个人信息表单
+ *
+ * @returns 无返回值
+ */
 function resetProfile() {
   if (formRef.value) {
     formRef.value.resetFields();
