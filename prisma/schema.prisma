@@ -1,0 +1,16 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "sqlite"
+  url      = "file:./kk_node.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model UserProfile {
+  id       Int    @id @default(autoincrement())
+  username String
+  email    String
+  phone    String
+}

@@ -22,12 +22,17 @@
     "@ocap/client": "^1.18.128",
     "@ocap/mcrypto": "^1.18.128",
     "@ocap/wallet": "^1.18.128",
+    "@prisma/client": "^5.17.0",
     "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
+    "element-plus": "^2.7.8",
     "express": "^4.19.2",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "prisma": "^5.17.0",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@blocklet/js-sdk": "^1.16.28",
@@ -44,6 +49,8 @@
     "prettier": "^3.3.3",
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.3",
     "vite": "^5.3.5",
     "vite-plugin-blocklet": "^0.8.15",
     "vue": "^3.4.31",

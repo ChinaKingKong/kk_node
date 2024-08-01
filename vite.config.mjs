@@ -1,10 +1,17 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { createBlockletPlugin } from 'vite-plugin-blocklet';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import AutoImport from 'unplugin-auto-import/vite';
 
-// https://vitejs.dev/config/
-export default defineConfig(() => {
-  return {
-    plugins: [vue(), createBlockletPlugin()],
-  };
+export default defineConfig({
+  plugins: [
+    vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
 });
