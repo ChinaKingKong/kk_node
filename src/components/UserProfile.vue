@@ -93,8 +93,11 @@ async function saveProfile() {
   formRef.value.validate(async (valid) => {
     if (valid) {
       try {
-        api.post('/api/profile', profile);
-        cancelAction();
+        const { data } = await api.post('/api/profile', profile);
+        if (data) {
+          isEditing.value = false;
+          Object.assign(profile, data);
+        }
         ElMessage.success('保存成功');
       } catch (error) {
         if (error.response && error.response.status === 400) {
