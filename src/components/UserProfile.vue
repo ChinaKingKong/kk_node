@@ -80,11 +80,8 @@ async function fetchProfile() {
  *
  * @returns 无返回值
  */
-function cancelAction() {
-  profile.id = 0;
-  profile.username = '';
-  profile.email = '';
-  profile.phone = '';
+async function cancelAction() {
+  await fetchProfile();
   isEditing.value = false;
 }
 
@@ -119,7 +116,7 @@ async function saveProfile() {
  * @returns 无返回值，异步操作
  */
 async function deleteUser() {
-  ElMessageBox.confirm('确定删除用户吗？', '提示', {
+  ElMessageBox.confirm('确定删除当前用户吗？', '提示', {
     confirmButtonText: '确定',
     cancelButtonText: '取消',
     type: 'warning',
@@ -255,10 +252,6 @@ function toggleEditing() {
 @media (max-width: 600px) {
   .profile-card {
     padding: 10px;
-  }
-
-  .el-button {
-    width: 100%;
   }
 }
 </style>
