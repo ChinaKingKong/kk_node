@@ -10,7 +10,6 @@ import {
   ElContainer,
   ElMain,
   ElFooter,
-  ElDivider,
   ElMessageBox,
 } from 'element-plus';
 import { User, Message, Phone } from '@element-plus/icons-vue';
@@ -165,15 +164,13 @@ function toggleEditing() {
   <el-card class="profile-card" header="用户信息">
     <template v-if="profile.username && !isEditing">
       <el-form>
-        <el-form-item label="姓名:">
+        <el-form-item class="cell-line" label="姓名:">
           <span>{{ profile.username }}</span>
         </el-form-item>
-        <el-divider></el-divider>
-        <el-form-item label="邮箱:">
+        <el-form-item class="cell-line" label="邮箱:">
           <span>{{ profile.email }}</span>
         </el-form-item>
-        <el-divider></el-divider>
-        <el-form-item label="手机:">
+        <el-form-item class="cell-line" label="手机:">
           <span>{{ profile.phone }}</span>
         </el-form-item>
       </el-form>
@@ -240,6 +237,10 @@ function toggleEditing() {
 
 .el-input {
   width: 100%;
+}
+
+.cell-line {
+  border-bottom: 1px solid lightgray;
 }
 
 .btns-view {
