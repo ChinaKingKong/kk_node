@@ -102,7 +102,7 @@ async function saveProfile() {
         isEditing.value = false;
         ElMessage.success('保存成功');
       } catch (error) {
-        if (error.response.status == 400) {
+        if (error.response && error.response.status === 400) {
           ElMessage.error(error.response.data.error);
         } else {
           console.error('Failed to save profile:', error);
@@ -153,6 +153,15 @@ function resetProfile() {
   }
   isEditing.value = true;
 }
+
+/**
+ * 切换编辑状态
+ *
+ * @returns 无返回值
+ */
+function toggleEditing() {
+  isEditing.value = !isEditing.value;
+}
 </script>
 
 <template>
@@ -172,7 +181,7 @@ function resetProfile() {
         </el-form-item>
       </el-form>
       <div class="btns-view">
-        <el-button type="primary" @click="isEditing = true">编辑</el-button>
+        <el-button type="primary" @click="toggleEditing">编辑</el-button>
         <el-button type="danger" @click="deleteUser">删除</el-button>
       </div>
     </template>
