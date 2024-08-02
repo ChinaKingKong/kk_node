@@ -33,6 +33,14 @@ const rules = reactive({
   ],
 });
 
+/**
+ * 验证用户名
+ *
+ * @param rule 校验规则
+ * @param value 待校验的值
+ * @param callback 回调函数，用于返回校验结果
+ * @returns 无返回值，通过回调函数返回校验结果
+ */
 function validateUsername(rule, value, callback) {
   if (!value) {
     return callback(new Error('请输入姓名'));
