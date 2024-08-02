@@ -76,6 +76,19 @@ async function fetchProfile() {
 }
 
 /**
+ * 取消操作函数
+ *
+ * @returns 无返回值
+ */
+function cancelAction() {
+  profile.id = 0;
+  profile.username = '';
+  profile.email = '';
+  profile.phone = '';
+  isEditing.value = false;
+}
+
+/**
  * 保存用户信息
  *
  * @returns 异步函数，无返回值
@@ -180,7 +193,7 @@ function resetProfile() {
           <el-footer>
             <el-form-item>
               <div class="btns-view">
-                <el-button type="info" @click="isEditing = false">取消</el-button>
+                <el-button type="info" @click="cancelAction">取消</el-button>
                 <el-button type="primary" @click="saveProfile">保存</el-button>
               </div>
             </el-form-item>
