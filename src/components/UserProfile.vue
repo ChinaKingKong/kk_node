@@ -80,6 +80,10 @@ async function fetchProfile() {
  * @returns 无返回值
  */
 async function cancelAction() {
+  profile.id = 0;
+  profile.username = '';
+  profile.email = '';
+  profile.phone = '';
   await fetchProfile();
   isEditing.value = false;
 }
@@ -145,7 +149,7 @@ async function deleteUser() {
  *
  * @returns 无返回值
  */
-function resetProfile() {
+function addUserInfo() {
   if (formRef.value) {
     formRef.value.resetFields();
   }
@@ -208,7 +212,7 @@ function toggleEditing() {
     </template>
     <template v-else>
       <el-empty description="还没有用户信息哦，快去添加吧~">
-        <el-button type="primary" @click="resetProfile">新增用户</el-button>
+        <el-button type="primary" @click="addUserInfo">新增用户</el-button>
       </el-empty>
     </template>
   </el-card>
