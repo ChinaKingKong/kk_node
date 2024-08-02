@@ -179,7 +179,8 @@ function resetProfile() {
           </el-main>
           <el-footer>
             <el-form-item>
-              <div class="del-btn-view">
+              <div class="btns-view">
+                <el-button type="info" @click="isEditing = false">取消</el-button>
                 <el-button type="primary" @click="saveProfile">保存</el-button>
               </div>
             </el-form-item>
@@ -226,14 +227,6 @@ function resetProfile() {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-}
-
-.del-btn-view {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
 }
 
